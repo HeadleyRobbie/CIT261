@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title>Array Functions</title>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+</head>
+
+<body>
+	<script>
+		function generate() {
+			var number = new Array(5, 3, 6, 7, 9, 10, 20);
+			document.getElementById('output').innerHTML = number;
+		}
+		function multiply (){
+			var list = [2, 7, 3, 2, 6, 34, 5, 14];
+			var multiplier = 6;
+			var products = multiply(list, multiplier);
+			document.getElementById('output').innerHTML = products;
+		}
+
+		function multiply(list, multiplier) {
+			var sum ="";
+			for (var i=0; i<list.length; i++){
+				sum += list[i]* multiplier +"<br>";
+			}
+			return sum;
+		}
+			//for (n=1; n <= 12; n++){
+				//document.write(n + "x 5 = " + n*5 + "<BR>");
+			//};
+		//}
+
+
+	</script>
+
+	<h1>Code Topic 01 - JavaScript</h1>
+	<h2>JavaScript - Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</h2>
+	<h3>This button will demonstrate these topics</h3>
+
+	<button type="button" onclick="generate()">Generate Array</button><br><br>
+
+	<div id='array'></div>
+
+	<div id='multiply' class='hideOnLoad'>
+		<button type="button" onclick="multiply()">Multiply Array</button><br><br>
+	
+	</div>
+	
+	<div id='outputDiv'>
+		12
+		<br>
+		42
+		<br>
+		18
+		<br>
+		12
+		<br>
+		36
+		<br>
+		204
+		<br>
+		30
+		<br>
+		84
+		<br>
+		<br>
+	</div>
+
+	<div id='convertButton' class='hideOnLoad'>
+		<button type="button" onclick="convertArray(multipliedArray)">Convert Array</button>
+	</div><br>
+
+	<div id='convertArray'></div><br>
+
+	<div id='output'></div><br>
+
+
+</body>
+
+</html>
