@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON</title>
+</head>
+
+<body>
+    <h1>JSON with Parse & Stringify</h1>
+
+    <p id="parse"></p>
+    <p id="stringify"></p>
+
+    <script>
+
+        //This is my parse example:
+        var txt = '{"name":"Robbie Headley", "age":37, "State":"Alabama"}'
+        var obj = JSON.parse(txt);
+        document.getElementById("parse").innerHTML = obj.name + ", " + obj.age;
+
+        //This is my stringify example:
+        var obj = { name: "Robbie Headley", age: 37, state: "Alabama" };
+        var myJSON = JSON.stringify(obj);
+        document.getElementById("stringify").innerHTML = myJSON;
+
+    </script>
+</body>
+
+</html>
