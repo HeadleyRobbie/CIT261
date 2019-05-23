@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Local Storage</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <link rel="stylesheet" href="localstorage.js">
+
+    <script type="text/javascript" src="localStorage.js"></script>
+
+    <style>
+            body {
+                background-color: lightskyblue;
+                text-align: left;
+            }
+            </style>
+
+</head>
+
+<body>
+    <h1><u>Local Storage API</u></h1>
+
+
+    <p>Enter Your Credentials:</p>
+    <form id="form" action="#" method="post">
+
+        <label><span>First Name:</span><input id="firstName" type="text"></label>
+        <label><span>Last Name:</span><input id="lastName" type="text"></label>
+        <label><span>Address:</span><input id="address" type="text"></label>
+        <label><span>Phone:</span><input id="phone" type="text"></label>
+    </form>
+    <p>&nbsp;</p>
+    <button type="button" onClick="populatePerson()">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button"
+        onClick="setUser()">Show
+        Storage</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onClick="clearItems()">Reset</button>
+    <p>&nbsp;</p>
+    <div id="userOutput"></div>
+
+    <hr \>
+    <p>Every Number is multiplied by 5</p>
+    <p>Happy Clicking!</p>
+    <button type="button" onClick="clickCounter()">Click Here</button>&nbsp;</button>
+    <p>&nbsp;</p>
+    <div id="result"></div>
+</body>
+
+</html>
