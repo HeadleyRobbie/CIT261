@@ -45,7 +45,7 @@ function createDiv(num) {
   newDiv.classList.add('clone');
 
   var h2 = document.createElement('h2');
-  h2.appendChild(document.createTextNode(`Element #${num}`));
+  h2.appendChild(document.createTextNode(`Star Wars ${num}`));
   newDiv.appendChild(h2);
 
   var button1 = document.createElement('button');

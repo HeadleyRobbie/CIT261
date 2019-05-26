@@ -5,14 +5,23 @@
     <meta charset="utf-8">
     <title>DOM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DOM</title>
+    <title>DOM</title>
 
-  <style>
-    body {
-        background-color: rgb(16, 73, 231);
-        text-align: center;
-    }
-</style>
+    <style>
+        button {
+            padding: 8px;
+            margin: 5px;
+            border-radius: 0px;
+            border: none;
+            background-color: rgb(13, 243, 117);
+        }
+
+        body {
+            background-color: rgb(156, 154, 154);
+            text-align: center;
+        }
+        
+    </style>
 
 
 </head>
@@ -21,12 +30,15 @@
     <a href="http://headleyrobbie.github.io/cit261/index.html/"></a>
 
     <h1><u>Dom Manipulation</u></h1>
+    <h2><u>Using CreateElement - AppendChild - InsertBefore - & RemoveChild</u></h2>
+    <!--<img id="CIT261JavaScript" src="images/starwars.jpeg" style="width:100px;height:100px">-->
+    <hr>
     <button id="add-begin">Add to Top</button>
+    <button type="button" onClick="clearItems()">Reset</button>
     <button id="add-end">Add to Bottom</button>
-    <button type="button"onClick="clearItems()">Reset</button>
     <section id="container">
         <div class="clone">
-            <h2>Element #1</h2>
+            <h2>Star Wars 1</h2>
             <button class="change-color">Add Color</button>
             <button class="remove">Remove</button>
         </div>
