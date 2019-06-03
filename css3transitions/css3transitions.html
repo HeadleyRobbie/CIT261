@@ -1,0 +1,181 @@
+<!DOCTYPE hmtl>
+<html>
+
+<head>
+    <title>CSS3 transitions with JavaScript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        #box {
+            margin: auto;
+            width: 60%;
+            border: 3px solid rgb(252, 4, 4);
+            padding: 10px;
+        }
+
+        #box1 {
+            margin: auto;
+            width: 60%;
+            border: 3px solid rgb(252, 4, 4);
+            padding: 0px;
+        }
+
+        body {
+            background-color: lightslategrey;
+            text-align: center;
+        }
+
+        #box {
+            background: blue;
+            width: 400px;
+            height: 200px;
+            color: white;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        #box2 {
+            background: rgba(248, 3, 3, 0.671);
+            width: 300px;
+            height: 300px;
+            color: white;
+            font-size: 2em;
+            text-align: center;
+            position: absolute;
+            top: 1100px;
+            left: -400px;
+            justify-content: center;
+        }
+
+        #box1 {
+            background: black;
+            width: 400px;
+            height: 200px;
+            color: white;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        div button {
+
+            font-size: 1em;
+        }
+
+
+        button {
+            padding: 5px;
+            margin: 5px auto;
+            background: rgb(14, 13, 13);
+            color: rgb(246, 248, 248);
+            text-align: right;
+            box-shadow: 5px 5px 5px #f30f0f;
+        }
+    </style>
+    <script>
+        function changeBackground(color) {
+            var element = document.querySelector("#box");
+            element.style.transition = "background 1.0s linear 0s";
+            element.style.background = color;
+        }
+
+        function fadeIn() {
+            var element = document.querySelector("#box");
+            element.style.transition = "opacity 1.0s ease-in 0s";
+            element.style.opacity = 1;
+        }
+
+        function fadeOut() {
+            var element = document.querySelector("#box");
+            element.style.transition = "opacity 1.0s linear 0s";
+            element.style.opacity = 0;
+        }
+
+        function slideOpen() {
+            var element = document.querySelector("#box1");
+            element.style.transition = "height 0.5s linear 0s";
+            element.style.height = "200px";
+        }
+        function slideClose() {
+            var element = document.querySelector("#box1");
+            element.style.transition = "height 0.5s linear 0s";
+            element.style.height = "0px";
+        }
+
+        function slideIn() {
+            var element = document.querySelector("#box2");
+            element.style.transition = "left 1s linear 0s";
+            element.style.left = "0px";
+        }
+
+        function slideOut() {
+            var element = document.querySelector("#box2");
+            element.style.transition = "left 1s linear 0s";
+            element.style.left = "-300px";
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <h1><u>CSS3 Transitions with JavaScript</u></h1>
+
+    </header>
+    <div id="box">Hello World!</div>
+    <h2>Change the Color</h2>
+    <div class="bg">
+        <div class="btn-group">
+            <button onclick="changeBackground('red')">Red </button>
+            <button onclick="changeBackground('black')">Black </button>
+            <button onclick="changeBackground('yellow')">Yellow </button>
+            <button onclick="changeBackground('blue')">Reset</button>
+        </div>
+        <br>
+        <h2>Fade Out & In</h2>
+        <div class="bg">
+        </div>
+        <div>
+            <button onclick="fadeOut()">Fade Out </button>
+        </div>
+        <div>
+            <button onclick="fadeIn()">Fade In </button>
+        </div>
+    </div>
+<br>
+<br>
+    <h2>Open & Close the Box</h2>
+    <div id="box1"> Hello World!</div>
+    <div class="bg">
+        <br>
+        <div>
+            <button onclick="slideOpen()">Slide Open</button>
+        </div>
+        <div>
+            <button onclick="slideClose()">Slide Closed</button>
+        </div>
+    </div>
+    <br>
+    <h2>Slide the Box</h2>
+    <div class="bg">
+        <figure>
+                <img id="box2" src="images/starwars.png" alt="starwars" title="starwars">
+            </figure>
+        <div>
+            <button onclick="slideIn()">Slide In</button>
+        </div>
+        <div>
+            <button onclick="slideOut()">Slide Out</button>
+        </div>
+    </div>
+</body>
+
+</html>
