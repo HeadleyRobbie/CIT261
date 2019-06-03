@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Class Properties Using JavaScript</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+
+    <style>
+        body {
+            font-size: 80%;
+            letter-spacing: 0.15em;
+            background-color: #9b9cfca8;
+        }
+
+        div {
+            margin: 20px 20px 20px 20px;
+            padding: 20px;
+            background-color: lightgrey;
+        }
+
+        h1 {
+            text-align: left;
+            margin-left: 50px;
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 24px;
+            text-align: left;
+            width: 600px;
+            margin: 20px auto 20px auto;
+
+        }
+
+        p {
+            text-align: left;
+            width: 600px;
+            margin: 20px auto 20px auto;
+            font-weight: normal;
+        }
+
+        figure {
+            width: 600px;
+            margin: 20px auto 20px auto;
+        }
+
+        button {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: rgb(214, 214, 240);
+            text-align: right;
+            box-shadow: 5px 5px 5px #777777;
+        }
+
+
+        img {
+            width: 300px;
+        }
+
+        #q1 {
+            color: red;
+        }
+
+        #q2 {
+            color: blue;
+        }
+
+        #q3 {
+            color: red;
+
+        }
+
+        #q4 {
+            color: blue;
+        }
+
+        #q5 {
+            color: red;
+        }
+
+        #q6 {
+            color: blue;
+        }
+
+        #q7 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><u>CSS Class Properties Using JavaScript</u></h1>
+    <h1>Click the button to change the content</h1>
+
+
+    <div id="q1">
+        <h2 class="title"><u>Text Color</u></h2>
+        <p id="p1">Lorem ipsum nullam inceptos pulvinar egestas tincidunt ac lectus maecenas odio, netus vel egestas eu
+            ut aenean enim ipsum molestie diam, tempus vehicula scelerisque netus non sem aliquam sodales risus.
+            Nisi elit urna nibh purus ullamcorper egestas ullamcorper neque eu egestas magna maecenas, viverra sed
+            laoreet tristique nec congue nisl mollis sollicitudin nunc justo habitant ut inceptos consequat nisl eget.
+            Porta torquent habitasse aenean tempor taciti auctor fames, consectetur mi semper phasellus laoreet
+            himenaeos, commodo potenti nisl donec convallis pretium curabitur nam nunc lorem.
+            Sodales rutrum dapibus etiam in sollicitudin eros tellus nec pharetra, nostra velit fames sapien libero
+            molestie curabitur suspendisse nec sodales erat pulvinar.
+            Conubia vehicula a ad inceptos tristique enim arcu habitasse, egestas ac pretium erat platea aenean
+            convallis imperdiet, turpis tempus faucibus imperdiet dictumst integer quis.</p>
+        <button type="button" onclick="changeTextq1Function()">Click to change color</button>
+        <button type="button" onClick="clearItems()">Reset</button>
+    </div>
+
+    <div id="q2">
+        <h2 class="title"><u>Text Size</u></h2>
+        <p>Lorem ipsum nullam inceptos pulvinar egestas tincidunt ac lectus maecenas odio, netus vel egestas eu
+            ut aenean enim ipsum molestie diam, tempus vehicula scelerisque netus non sem aliquam sodales risus.</p>
+        <button type="button" onclick="changeSizeq2Function()">Change text size</button>
+        <button type="button" onClick="clearItems()">Reset</button>
+    </div>
+
+    <div id="q3">
+        <h2 class="title"><u>Margin</u></h2>
+        <p>Lorem ipsum nullam inceptos pulvinar egestas tincidunt ac lectus maecenas odio, netus vel egestas eu
+            ut aenean enim ipsum molestie diam, tempus vehicula scelerisque netus non sem aliquam sodales risus.</p>
+        <button type="button" onclick="changeMarginq3Function()">Change margin</button>
+        <button type="button" onClick="clearItems()">Reset</button>
+    </div>
+
+    <div id="q4">
+        <h2 class="title">Background Color</h2>
+        <p>Lorem ipsum nullam inceptos pulvinar egestas tincidunt ac lectus maecenas odio, netus vel egestas eu
+            ut aenean enim ipsum molestie diam, tempus vehicula scelerisque netus non sem aliquam sodales risus.</p>
+        <button type="button" onclick="changebackgroundColorq4Function()">Change background color</button>
+        <button type="button" onClick="clearItems()">Reset</button>
+    </div>
+
+    <div id="q5">
+        <h2 class="title"><u>Border</u></h2>
+        <p>Lorem ipsum nullam inceptos pulvinar egestas tincidunt ac lectus maecenas odio, netus vel egestas eu
+            ut aenean enim ipsum molestie diam, tempus vehicula scelerisque netus non sem aliquam sodales risus.</p>
+        <button type="button" onclick="changeborderq6Function()">Add a border</button>
+        <button type="button" onClick="clearItems()">Reset</button>
+    </div>
+
+
+
+    <div id="q6">
+        <figure>
+            <img id="image6" src="images/starwars.png" alt="tall s trees" title="Image starwars">
+        </figure>
+        <h2 id="title6"><u>Align items in the middle</u></h2>
+        <p id="center">Lorem ipsum nullam inceptos pulvinar egestas tincidunt ac lectus maecenas odio, netus vel egestas eu
+            ut aenean enim ipsum molestie diam, tempus vehicula scelerisque netus non sem aliquam sodales risus.</p>
+        <button type="button" onclick="changetextalignq7Function()">Center items</button>
+        <button type="button" onClick="clearItems()">Reset</button>
+    </div>
+
+    <div id="q7">
+        <figure>
+            <img id="picture8" src="images/starwars.png" alt="tree" title="starwars">
+        </figure>
+        <h2 class="title"><u>Resize Image</u></h2>
+        <p>Lorem ipsum nullam inceptos pulvinar egestas tincidunt ac lectus maecenas odio, netus vel egestas eu
+            ut aenean enim ipsum molestie diam, tempus vehicula scelerisque netus non sem aliquam sodales risus.</p>
+        <button type="button" onclick="imageFunction()">Resize image</button>
+        <button type="button" onClick="clearItems()">Reset</button>
+    </div>
+
+
+
+    <script>
+        function changeTextq1Function() {
+            document.getElementById("q1").style.color = "blue";
+        }
+
+        function clearItems() {
+            window.localStorage.clear();
+            location.reload();
+        }
+
+        function changeSizeq2Function() {
+            document.getElementById("q2").style.fontSize = "25px";
+        }
+
+        function changeMarginq3Function() {
+            document.getElementById("q3").style.margin = "60px";
+        }
+
+        function changebackgroundColorq4Function() {
+            document.getElementById("q4").style.backgroundColor = "black";
+        }
+
+        function changeborderq6Function() {
+            document.getElementById("q5").style.border = "solid lightblue 10px";
+        }
+
+        function changetextalignq7Function() {
+            document.getElementById("center").style.textAlign = "center";
+            document.getElementById("title6").style.textAlign = "center";
+            document.getElementById("q6").style.textAlign = "center";
+
+        }
+
+        function changePictureWidth() {
+    var picWidth = document.getElementById("picWidth").value;
+    document.getElementById("starwars").style.width = picWidth + '%'; 
+}
+
+        function imageFunction() {
+            document.getElementById("picture8").style.width = "200px";
+        }
+    </script>
+
+</body>
+
+</html>
