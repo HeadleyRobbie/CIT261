@@ -38,7 +38,9 @@
 
 
         }
-
+        figure{
+            position: relative;
+        }
         #box2 {
             background: rgba(248, 3, 3, 0.671);
             width: 300px;
@@ -47,8 +49,7 @@
             font-size: 2em;
             text-align: center;
             position: absolute;
-            top: 1100px;
-            left: -400px;
+            left: -500px;
             justify-content: center;
         }
 
@@ -61,7 +62,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
+            
 
         }
 
@@ -119,7 +120,7 @@
         function slideOut() {
             var element = document.querySelector("#box2");
             element.style.transition = "left 1s linear 0s";
-            element.style.left = "-300px";
+            element.style.left = "-500px";
         }
     </script>
 

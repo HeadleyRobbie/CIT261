@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Events</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+</head>
+
+<body>
+
+    <h2>Standard JavaScript Events Including those for Mobile Devices</h2>
+
+    <button onclick="document.getElementById('clock').innerHTML=Date()">Click to get the time</button>
+    <p id="clock"></p>
+
+
+    <p>Password Validation</p>
+
+    <div class="passwordValidation">
+        <form onsubmit="submitAlert()" action="#">
+            <label><span>User Name: </span><input type="text" name="userName" id="testUserName" onblur="colorChange()"
+                    required></label>
+            <label><span>Password: </span><input type="password" id="psw" name="psw" required></label>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <canvas id="passwordCanvas" height="10px"></canvas>
+    <div id="message">
+        <h3>Password must contain the following:</h3>
+        <ul>
+            <li id="letter">A <b>lowercase</b> letter</li>
+            <li id="capital">A <b>capital (uppercase)</b> letter</li>
+            <li id="numbers">A <b>number</b></li>
+            <li id="length">Minimum <b>8 characters</b></li>
+        </ul>
+    </div>
+    <script>
+        var myPassword = document.getElementById("psw");
+        var canvas = document.getElementById("passwordCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "red";
+        ctx.fillRect(0, 0, 300, 10);
+        var securityScore = 0;
+
+        myPassword.onfocus = function () {
+            document.getElementById("message").style.display = "block";
+            document.getElementById("passwordCanvas").style.display = "block";
+        }
+
+        myPassword.onblur = function () {
+            document.getElementById("message").style.display = "none";
+            document.getElementById("passwordCanvas").style.display = "none";
+        }
+
+        myPassword.onkeyup = function () {
+            var lowerCase = /[a-z]/g;
+            if (myPassword.value.match(lowerCase)) {
+                var lowCaseScore = 1;
+                document.getElementById("letter").style.color = "#4CAF50";
+            } else {
+                var lowCaseScore = 0;
+            }
+
+            var upperCase = /[A-Z]/g;
+            if (myPassword.value.match(upperCase)) {
+                var upperCaseScore = 1;
+                document.getElementById("capital").style.color = "#4CAF50";
+            } else {
+                var upperCaseScore = 0;
+            }
+
+            var numberCheck = /[0-9]/g;
+            if (myPassword.value.match(numberCheck)) {
+                var numberScore = 1;
+                document.getElementById("numbers").style.color = "#4CAF50";
+            } else {
+                var numberScore = 0;
+            }
+
+            if (myPassword.value.length >= 8) {
+                var lengthScore = 2;
+                document.getElementById("length").style.color = "#4CAF50";
+            } else {
+                var lengthScore = 0;
+            }
+
+            securityScore = lowCaseScore + upperCaseScore + numberScore + lengthScore;
+            if (securityScore == 1) {
+                ctx.fillStyle = "#4CAF50";
+                ctx.fillRect(0, 0, 50, 10);
+            }
+
+            if (securityScore == 2) {
+                ctx.fillStyle = "#4CAF50";
+                ctx.fillRect(0, 0, 100, 10);
+            }
+
+            if (securityScore == 3) {
+                ctx.fillStyle = "#4CAF50";
+                ctx.fillRect(0, 0, 150, 10);
+            }
+
+            if (securityScore > 3) {
+                ctx.fillStyle = "#4CAF50";
+                ctx.fillRect(0, 0, 300, 10);
+            }
+        }
+
+        function submitAlert() {
+            if (securityScore > 3) {
+                alert("You have submitted a STRONG password!!");
+            } else {
+                alert("You have submitted a WEAK password. Please try again!");
+            }
+        }
+        function clearFields() {
+            location.reload();
+        }
+        function colorChange() {
+            var myUserName = document.getElementById("testUserName").value;
+            if (myUserName === "") {
+                document.getElementById("testUserName").style.backgroundColor = "#ffdde3";
+            }
+        }
+    </script>
+    <button type="button" onclick="clearFields()">Reset</button>
+</body>
+
+</html>
