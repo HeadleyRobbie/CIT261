@@ -3,19 +3,43 @@
 
 <head>
     <meta charset="utf-8">
-    <title>JavaScript Events</title>
+    <title>Events</title>
     <meta name="viewport" content="width=device-width, inital-scale=1">
 </head>
 
+<style type="text/css">
+    body {
+        background-color: lightslategrey;
+        text-align: center;
+    }
+
+    canvas {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 535px;
+    }
+
+    button {
+        padding: 5px;
+        margin: 5px auto;
+        background: rgb(14, 13, 13);
+        color: rgb(246, 248, 248);
+        text-align: right;
+        box-shadow: 5px 5px 5px #f30f0f;
+    }
+</style>
+
 <body>
 
-    <h2>Standard JavaScript Events Including those for Mobile Devices</h2>
+    <h1><u>JavaScript Events</u></h1>
 
     <button onclick="document.getElementById('clock').innerHTML=Date()">Click to get the time</button>
     <p id="clock"></p>
 
 
-    <p>Password Validation</p>
+    <p>Enter a user name & password</p>
 
     <div class="passwordValidation">
         <form onsubmit="submitAlert()" action="#">
@@ -25,22 +49,23 @@
             <input type="submit" value="Submit">
         </form>
     </div>
+    <br>
     <canvas id="passwordCanvas" height="10px"></canvas>
     <div id="message">
-        <h3>Password must contain the following:</h3>
-        <ul>
-            <li id="letter">A <b>lowercase</b> letter</li>
-            <li id="capital">A <b>capital (uppercase)</b> letter</li>
-            <li id="numbers">A <b>number</b></li>
-            <li id="length">Minimum <b>8 characters</b></li>
-        </ul>
+        <h3>Your password must include the following:</h3>
+
+        <li id="letter">A <b>lowercase</b> letter</li>
+        <li id="capital">A <b>capital (uppercase)</b> letter</li>
+        <li id="numbers">A <b>number</b></li>
+        <li id="length">Minimum <b>6 characters</b></li>
+
     </div>
     <script>
         var myPassword = document.getElementById("psw");
         var canvas = document.getElementById("passwordCanvas");
         var ctx = canvas.getContext("2d");
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "red";
+        ctx.fillStyle = "black";
         ctx.fillRect(0, 0, 300, 10);
         var securityScore = 0;
 
@@ -79,7 +104,7 @@
                 var numberScore = 0;
             }
 
-            if (myPassword.value.length >= 8) {
+            if (myPassword.value.length >= 6) {
                 var lengthScore = 2;
                 document.getElementById("length").style.color = "#4CAF50";
             } else {
@@ -88,31 +113,31 @@
 
             securityScore = lowCaseScore + upperCaseScore + numberScore + lengthScore;
             if (securityScore == 1) {
-                ctx.fillStyle = "#4CAF50";
+                ctx.fillStyle = "darkgreen";
                 ctx.fillRect(0, 0, 50, 10);
             }
 
             if (securityScore == 2) {
-                ctx.fillStyle = "#4CAF50";
+                ctx.fillStyle = "darkgreen";
                 ctx.fillRect(0, 0, 100, 10);
             }
 
             if (securityScore == 3) {
-                ctx.fillStyle = "#4CAF50";
+                ctx.fillStyle = "darkgreen";
                 ctx.fillRect(0, 0, 150, 10);
             }
 
             if (securityScore > 3) {
-                ctx.fillStyle = "#4CAF50";
+                ctx.fillStyle = "darkgreen";
                 ctx.fillRect(0, 0, 300, 10);
             }
         }
 
         function submitAlert() {
             if (securityScore > 3) {
-                alert("You have submitted a STRONG password!!");
+                alert("This is a STRONG password! May the force be with you!!!");
             } else {
-                alert("You have submitted a WEAK password. Please try again!");
+                alert("This is a WEAK password. Try again!");
             }
         }
         function clearFields() {
@@ -125,6 +150,7 @@
             }
         }
     </script>
+    <br>
     <button type="button" onclick="clearFields()">Reset</button>
 </body>
 
