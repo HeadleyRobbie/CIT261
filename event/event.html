@@ -24,10 +24,10 @@
     button {
         padding: 5px;
         margin: 5px auto;
-        background: rgb(14, 13, 13);
-        color: rgb(246, 248, 248);
+        background: rgb(5, 248, 46);
+        color: rgb(12, 12, 12);
         text-align: right;
-        box-shadow: 5px 5px 5px #f30f0f;
+        box-shadow: 5px 5px 5px #453cc2;
     }
 </style>
 
@@ -83,7 +83,7 @@
             var lowerCase = /[a-z]/g;
             if (myPassword.value.match(lowerCase)) {
                 var lowCaseScore = 1;
-                document.getElementById("letter").style.color = "#4CAF50";
+                document.getElementById("letter").style.color = "#0000FF";
             } else {
                 var lowCaseScore = 0;
             }
@@ -91,7 +91,7 @@
             var upperCase = /[A-Z]/g;
             if (myPassword.value.match(upperCase)) {
                 var upperCaseScore = 1;
-                document.getElementById("capital").style.color = "#4CAF50";
+                document.getElementById("capital").style.color = "#0000FF";
             } else {
                 var upperCaseScore = 0;
             }
@@ -99,14 +99,14 @@
             var numberCheck = /[0-9]/g;
             if (myPassword.value.match(numberCheck)) {
                 var numberScore = 1;
-                document.getElementById("numbers").style.color = "#4CAF50";
+                document.getElementById("numbers").style.color = "#0000FF";
             } else {
                 var numberScore = 0;
             }
 
             if (myPassword.value.length >= 6) {
                 var lengthScore = 2;
-                document.getElementById("length").style.color = "#4CAF50";
+                document.getElementById("length").style.color = "#0000FF";
             } else {
                 var lengthScore = 0;
             }
@@ -140,18 +140,26 @@
                 alert("This is a WEAK password. Try again!");
             }
         }
+
         function clearFields() {
             location.reload();
         }
+
         function colorChange() {
             var myUserName = document.getElementById("testUserName").value;
             if (myUserName === "") {
                 document.getElementById("testUserName").style.backgroundColor = "#ffdde3";
             }
+       }
+
+        function clearItems() {
+            window.localStorage.clear();
+            location.reload();
         }
+
     </script>
     <br>
-    <button type="button" onclick="clearFields()">Reset</button>
+    <button type="button" onClick="clearItems()">Reset</button>
 </body>
 
 </html>
