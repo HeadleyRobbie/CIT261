@@ -82,10 +82,10 @@ div {
     background: #e70b93;
 }
 #click:active {
-    width: 200px;
+    width: 10px;
     height: -250px;
-    border-radius: 150%;
+    border-radius: 10%;
     -webkit-transform: rotateZ(-720deg);  /* Safari */
     transform: rotateZ(-720deg); 
-    background-color: #05b6fc
+    background-color: #0c0c0c
 }
